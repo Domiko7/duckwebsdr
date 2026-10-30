@@ -15,6 +15,7 @@ class ReceiverDetails(PropertyFilter):
                 "receiver_name",
                 "receiver_help",
                 "receiver_location",
+                "receiver_antenna",
                 "receiver_asl",
                 "receiver_gps",
                 "photo_title",
@@ -31,4 +32,6 @@ class ReceiverDetails(PropertyFilter):
             receiver_info["locator"] = Locator.fromCoordinates(receiver_info["receiver_gps"])
         except ValueError as e:
             logger.error("invalid receiver location, check in settings: %s", str(e))
+        antenna = receiver_info.get("receiver_antenna", "")
+        receiver_info["receiver_antenna_display"] = " | Ant: {}".format(antenna) if antenna else ""
         return receiver_info

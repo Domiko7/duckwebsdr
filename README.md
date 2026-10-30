@@ -1,15 +1,15 @@
-DuckWebSdr
+DuckSdr
 
 ![Duck](duck-smaller.png)
 
-This is a WIP improved version of OpenWebRx++.
+DuckSdr is a WIP improved version of OpenWebRX++.
 You might be wondering, why am I doing this if OpenWebRx++ is good enough already?
 Well I must say it's my favourite SDR software but I don't like some things about it and since I'm also gonna make my own DIY SDR device in the future I want to add some things. :D
 
 Original OpenWebRX++
 =========
 
-This is the **improved version** of the OpenWebRX online SDR. The pre-built OpenWebRX+ packages are available from the [package repository](https://luarvique.github.io/ppa/). Pre-built disk images are available from the [Releases page](https://github.com/luarvique/openwebrx/releases). OpenWebRX+ [documentation](https://fms.komkon.org/OWRX/) draft is now available. News, support, and general discussion can be found in the [Telegram channel](https://t.me/openwebrx) and related [chat](https://t.me/openwebrx_chat). Features found in OpenWebRX+ that are not present in the original version:
+DuckSdr is based on the **improved version** of the OpenWebRX online SDR. The pre-built OpenWebRX+ packages are available from the [package repository](https://luarvique.github.io/ppa/). Pre-built disk images are available from the [Releases page](https://github.com/luarvique/openwebrx/releases). OpenWebRX+ [documentation](https://fms.komkon.org/OWRX/) draft is now available. News, support, and general discussion can be found in the [Telegram channel](https://t.me/openwebrx) and related [chat](https://t.me/openwebrx_chat). Features found in OpenWebRX+ that are not present in the original version:
 * AIS, SSTV, FAX, FLEX, POCSAG, HFDL, VDL2, ADSB, ACARS, ISM, RDS, SAM, SITOR-B, RTTY, and CW decoders.
 * DTMF, EEA, EIA, CCIR, and several ZVEY SELCALL decoders.
 * Background SSTV and FAX decoding with received images browser.
@@ -74,7 +74,7 @@ on the respective methods.
 ## Community
 
 If you have trouble setting up or configuring your receiver, you have some great idea you want to see implemented, or
-you just generally want to have some OpenWebRX-related chat, come visit us over on
+you just generally want to have some DuckSdr-related chat, come visit us over on
 [our groups.io group](https://groups.io/g/openwebrx).
 
 If you want to hang out, chat, or get in touch directly with the developers, receiver operators or users, feel free to
@@ -90,8 +90,8 @@ However, if you hold down the shift key, you can drag the center line (BFO) or t
 
 ## Licensing
 
-OpenWebRX is available under Affero GPL v3 license
+DuckSdr is available under Affero GPL v3 license
 ([summary](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0))).
 
-OpenWebRX is also available under a commercial license on request. Please contact me at the address
-*&lt;randras@sdr.hu&gt;* for licensing options. 
+DuckSdr is also available under a commercial license on request. Please contact me at the address
+*&lt;randras@sdr.hu&gt;* for licensing options.

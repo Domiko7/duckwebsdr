@@ -14,7 +14,7 @@ from owrx.form.input import (
 from owrx.form.input.validator import RangeValidator, UrlValidator
 from owrx.form.input.converter import WaterfallColorsConverter, IntConverter
 from owrx.form.input.receiverid import ReceiverKeysInput
-from owrx.form.input.gfx import AvatarInput, TopPhotoInput
+from owrx.form.input.gfx import TopPhotoInput
 from owrx.form.input.device import WaterfallLevelsInput, WaterfallAutoLevelsInput
 from owrx.form.input.location import LocationInput
 from owrx.form.input.country import CountryInput
@@ -45,6 +45,11 @@ class GeneralSettingsController(SettingsFormController):
                 "Receiver information",
                 TextInput("receiver_name", "Receiver name"),
                 TextInput("receiver_location", "Receiver location"),
+                TextInput(
+                    "receiver_antenna",
+                    "Antenna(s)",
+                    infotext="Antenna or antennas used with this receiver, shown in the receiver header.",
+                ),
                 NumberInput(
                     "receiver_asl",
                     "Receiver elevation",
@@ -79,12 +84,6 @@ class GeneralSettingsController(SettingsFormController):
             ),
             Section(
                 "Receiver images",
-                AvatarInput(
-                    "receiver_avatar",
-                    "Receiver Avatar",
-                    infotext="Maximum file size is 256kB. For performance reasons, images are cached. "
-                    + "It can take a few hours until they appear on the site.",
-                ),
                 TopPhotoInput(
                     "receiver_top_photo",
                     "Receiver Panorama",

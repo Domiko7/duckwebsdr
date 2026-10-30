@@ -10,7 +10,7 @@ except ImportError:
     find_namespace_packages = PEP420PackageFinder.find
 
 setup(
-    name="OpenWebRX",
+    name="DuckSdr",
     version=str(looseversion),
     packages=find_namespace_packages(
         include=[

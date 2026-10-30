@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 PoisonPill = object()
 
-SOFTWARE_NAME = "OpenWebRX"
+SOFTWARE_NAME = "DuckSdr"
 SELF_SPOT_SECONDS = 3600 * 6
 
 MANUFACTURERS = {

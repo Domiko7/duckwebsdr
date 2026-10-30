@@ -1,9 +1,9 @@
 Template: openwebrx/admin_user_password
 Type: password
-Description: OpenWebRX "admin" user password:
- The system can create a user for the OpenWebRX web configuration interface for
+Description: DuckSdr "admin" user password:
+ The system can create a user for the DuckSdr web configuration interface for
  you. Using this user, you will be able to log into the "settings" area of
- OpenWebRX to configure your receiver conveniently through your browser.
+ DuckSdr to configure your receiver conveniently through your browser.
  .
  The name of the created user will be "admin".
  .
@@ -18,10 +18,10 @@ Description: OpenWebRX "admin" user password:
 Template: openwebrx/admin_user_configured
 Type: boolean
 Default: false
-Description: OpenWebRX "admin" user previously configured?
+Description: DuckSdr "admin" user previously configured?
  Marker used internally by the config scripts to remember if an admin user has
  been created.
 
 Template: openwebrx/title
 Type: title
-Description: Configuring OpenWebRX
+Description: Configuring DuckSdr

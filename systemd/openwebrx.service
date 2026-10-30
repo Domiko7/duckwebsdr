@@ -1,5 +1,5 @@
 [Unit]
-Description=OpenWebRX WebSDR receiver
+Description=DuckSdr WebSDR receiver
 
 [Service]
 Type=simple

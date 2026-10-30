@@ -214,12 +214,12 @@ class FeatureDetector(object):
 
     def has_csdr(self):
         """
-        OpenWebRX uses the demodulator and pipeline tools provided by the
+        DuckSdr uses the demodulator and pipeline tools provided by the
         [CSDR](https://github.com/jketterl/csdr) project. In addition, the
         [PyCSDR](https://github.com/jketterl/pycsdr) must be installed to
         provide CSDR Python bindings. The `python3-csdr` package, found in
         the OpenWebRX repositories, should be all you need. Do not forget
-        to restart OpenWebRX after installing this package.
+        to restart DuckSdr after installing this package.
         """
         required_version = LooseVersion("0.18.0")
 
@@ -263,13 +263,13 @@ class FeatureDetector(object):
 
     def has_digiham(self):
         """
-        OpenWebRX uses the [DigiHAM](https://github.com/jketterl/digiham)
+        DuckSdr uses the [DigiHAM](https://github.com/jketterl/digiham)
         library for the digital voice modes. In addition, the
         [PyDigiHAM](https://github.com/jketterl/pydigiham) must
         be installed to provide DigiHAM Python bindings. The
         `python3-digiham` package, found in the OpenWebRX
         repositories, should be all you need. Do not forget to
-        restart OpenWebRX after installing this package.
+        restart DuckSdr after installing this package.
         """
         required_version = LooseVersion("0.6")
 
@@ -304,7 +304,7 @@ class FeatureDetector(object):
     def has_rtl_connector(self):
         """
         The [OWRX Connector](https://github.com/jketterl/owrx_connector)
-        provides direct interfacing between RTL-SDR hardware and OpenWebRX.
+        provides direct interfacing between RTL-SDR hardware and DuckSdr.
         You can install the `owrx-connector` package from the OpenWebRX
         repositories.
         """
@@ -314,7 +314,7 @@ class FeatureDetector(object):
         """
         The [OWRX Connector](https://github.com/jketterl/owrx_connector)
         provides direct interfacing between networked RTL-SDR hardware and
-        OpenWebRX. You can install the `owrx-connector` package from the
+        DuckSdr. You can install the `owrx-connector` package from the
         OpenWebRX repositories.
         """
         return self._check_owrx_connector("rtl_tcp_connector")
@@ -322,7 +322,7 @@ class FeatureDetector(object):
     def has_soapy_connector(self):
         """
         The [OWRX Connector](https://github.com/jketterl/owrx_connector)
-        provides direct interfacing between Soapy SDR API and OpenWebRX.
+        provides direct interfacing between Soapy SDR API and DuckSdr.
         You can install the `owrx-connector` package from the OpenWebRX
         repositories.
         """
@@ -503,7 +503,7 @@ class FeatureDetector(object):
 
     def has_m17_demod(self):
         """
-        OpenWebRX uses the [M17 Demodulator](https://github.com/mobilinkd/m17-cxx-demod)
+        DuckSdr uses the [M17 Demodulator](https://github.com/mobilinkd/m17-cxx-demod)
         to demodulate M17 digital voice signals. You can install the
         `m17-demod` package from the OpenWebRX repositories.
         """
@@ -511,7 +511,7 @@ class FeatureDetector(object):
 
     def has_direwolf(self):
         """
-        OpenWebRX uses the [Direwolf](https://github.com/wb2osz/direwolf)
+        DuckSdr uses the [Direwolf](https://github.com/wb2osz/direwolf)
         software modem to decode Packet Radio and report data back to APRS-IS.
         The same software is also used to decode maritime AIS transmissions.
         The `direwolf` package is available in most Linux distributions.
@@ -529,7 +529,7 @@ class FeatureDetector(object):
 
     def has_wsjtx(self):
         """
-        OpenWebRX uses the [WSJT-X](https://wsjt.sourceforge.io/) software
+        DuckSdr uses the [WSJT-X](https://wsjt.sourceforge.io/) software
         suite to decode FT8 and other digital modes. The `wsjtx` package is
         available in most Linux distributions.
         """
@@ -567,7 +567,7 @@ class FeatureDetector(object):
 
     def has_msk144decoder(self):
         """
-        OpenWebRX uses the
+        DuckSdr uses the
         [MSK144 Decoder](https://github.com/alexander-sholohov/msk144decoder)
         to decode the MSK144 digital mode. You can install the
         `msk144decoder` package from the OpenWebRX repositories.
@@ -576,7 +576,7 @@ class FeatureDetector(object):
 
     def has_js8(self):
         """
-        OpenWebRX uses the [JS8Call](http://js8call.com/) software
+        DuckSdr uses the [JS8Call](http://js8call.com/) software
         to decode JS8 communications. The `js8call` package is
         available in most Linux distributions.
 
@@ -589,10 +589,10 @@ class FeatureDetector(object):
 
     def has_js8py(self):
         """
-        OpenWebRX uses the [JS8Py](https://github.com/jketterl/js8py)
+        DuckSdr uses the [JS8Py](https://github.com/jketterl/js8py)
         library to decode binary JS8 messages into readable text. You
         can install the `python3-js8py` package from the OpenWebRX
-        repositories. Do not forget to restart OpenWebRX after
+        repositories. Do not forget to restart DuckSdr after
         installing this package.
         """
         required_version = StrictVersion("0.1")
@@ -605,7 +605,7 @@ class FeatureDetector(object):
 
     def has_alsa(self):
         """
-        Some SDR receivers identify themselves as sound cards. OpenWebRX relies
+        Some SDR receivers identify themselves as sound cards. DuckSdr relies
         on the ALSA library to access such receivers. It can be obtained by
         installing the `alsa-utils` package in most Linux distributions.
         """
@@ -645,7 +645,7 @@ class FeatureDetector(object):
 
     def has_dream(self):
         """
-        OpenWebRX uses the [Dream](https://sourceforge.net/projects/drm/)
+        DuckSdr uses the [Dream](https://sourceforge.net/projects/drm/)
         software to decode DRM broadcasts. The default version of Dream,
         supplied in most Linux distributions, so you will have to install
         the specially built `dream` package from the OpenWebRX+
@@ -705,7 +705,7 @@ class FeatureDetector(object):
     def has_hpsdr_connector(self):
         """
         The [HPSDR Connector](https://github.com/jancona/hpsdrconnector)
-        is required to interface OpenWebRX with Hermes Lite 2, Red Pitaya,
+        is required to interface DuckSdr with Hermes Lite 2, Red Pitaya,
         and similar networked SDR devices. You can install the
         `hpsdrconnector` package from the OpenWebRX repositories.
         """
@@ -743,7 +743,7 @@ class FeatureDetector(object):
 
     def has_dump1090(self):
         """
-        OpenWebRX supports decoding Mode-S and ADS-B airplane communications by using the
+        DuckSdr supports decoding Mode-S and ADS-B airplane communications by using the
         [Dump1090](https://github.com/flightaware/dump1090) decoder. You can install the
         `dump1090-fa-minimal` package from the OpenWebRX repositories.
 
@@ -759,7 +759,7 @@ class FeatureDetector(object):
 
     def has_dump978(self):
         """
-        OpenWebRX supports decoding UAT airplane communications by using the
+        DuckSdr supports decoding UAT airplane communications by using the
         [Dump978](https://github.com/flightaware/dump978) decoder. You can install the
         `dump978-fa-minimal` package from the OpenWebRX+ repositories.
         """
@@ -767,7 +767,7 @@ class FeatureDetector(object):
 
     def has_rtl_433(self):
         """
-        OpenWebRX supports decoding ISM signals from various sensors
+        DuckSdr supports decoding ISM signals from various sensors
         by using the [RTL-433](https://github.com/merbanan/rtl_433)
         decoder suite. The `rtl-433` package is available in most Linux
         distributions.
@@ -776,7 +776,7 @@ class FeatureDetector(object):
 
     def has_dumphfdl(self):
         """
-        OpenWebRX supports decoding HFDL airplane communications by using the
+        DuckSdr supports decoding HFDL airplane communications by using the
         [DumpHFDL](https://github.com/szpajder/dumphfdl) decoder. You can
         install the `dumphfdl` package from the OpenWebRX+ repositories.
         """
@@ -784,7 +784,7 @@ class FeatureDetector(object):
 
     def has_dumpvdl2(self):
         """
-        OpenWebRX supports decoding VDL Mode 2 airplane communications by using the
+        DuckSdr supports decoding VDL Mode 2 airplane communications by using the
         [DumpVDL2](https://github.com/szpajder/dumpvdl2) decoder. You can
         install the `dumpvdl2` package from the OpenWebRX+ repositories.
         """
@@ -792,7 +792,7 @@ class FeatureDetector(object):
 
     def has_redsea(self):
         """
-        OpenWebRX uses the [RedSea](https://github.com/windytan/redsea)
+        DuckSdr uses the [RedSea](https://github.com/windytan/redsea)
         decoder to obtain the RDS information from WFM broadcasts. You can
         install the `redsea` package from the OpenWebRX repositories.
         """
@@ -800,11 +800,11 @@ class FeatureDetector(object):
 
     def has_csdreti(self):
         """
-        To decode DAB broadcast signals, OpenWebRX needs the ETI decoder from the
+        To decode DAB broadcast signals, DuckSdr needs the ETI decoder from the
         [`csdr-eti`](https://github.com/jketterl/csdr-eti) project, together with
         the associated Python bindings from [`pycsdr-eti`](https://github.com/jketterl/pycsdr-eti).
         The `python3-csdr-eti` package, found in the OpenWebRX repositories,
-        should be all you need. Do not forget to restart OpenWebRX after
+        should be all you need. Do not forget to restart DuckSdr after
         installing this package.
         """
         required_version = LooseVersion("0.0.11")
@@ -822,7 +822,7 @@ class FeatureDetector(object):
 
     def has_dablin(self):
         """
-        OpenWebRX uses the [Dablin](https://github.com/Opendigitalradio/dablin)
+        DuckSdr uses the [Dablin](https://github.com/Opendigitalradio/dablin)
         software to decode DAB broadcast signals. The `dablin` package is
         available in most Linux distributions.
         """
@@ -830,11 +830,11 @@ class FeatureDetector(object):
 
     def has_paho_mqtt(self):
         """
-        OpenWebRX uses the [paho-mqtt](https://pypi.org/project/paho-mqtt/)
+        DuckSdr uses the [paho-mqtt](https://pypi.org/project/paho-mqtt/)
         library to send decoded signal data to an MQTT broker for further
         processing by third-party applications. The `python3-paho-mqtt`
         package is available in most Linux distributions. Do not forget
-        to restart OpenWebRX after installing this package.
+        to restart DuckSdr after installing this package.
         """
         try:
             from paho.mqtt import __version__
@@ -862,7 +862,7 @@ class FeatureDetector(object):
 
     def has_acarsdec(self):
         """
-        OpenWebRX supports decoding ACARS airplane communications by using the
+        DuckSdr supports decoding ACARS airplane communications by using the
         [AcarsDec](https://github.com/f00b4r0/acarsdec) decoder. You can
         install the `acarsdec` package from the OpenWebRX+ repositories.
         """
@@ -870,7 +870,7 @@ class FeatureDetector(object):
 
     def has_imagemagick(self):
         """
-        OpenWebRX converts received images to the PNG format with the
+        DuckSdr converts received images to the PNG format with the
         [ImageMagick](https://www.imagemagick.org/) tool. The
         `imagemagick` package is available in most Linux distributions.
         """
@@ -878,7 +878,7 @@ class FeatureDetector(object):
 
     def has_multimon(self):
         """
-        OpenWebRX supports decoding FLEX, POCSAG, and several other digital modes
+        DuckSdr supports decoding FLEX, POCSAG, and several other digital modes
         by using the [MultiMon-NG](https://github.com/EliasOenal/multimon-ng)
         decoder suite. You can install the `multimon-ng` package from the
         OpenWebRX+ repositories.
@@ -887,7 +887,7 @@ class FeatureDetector(object):
 
     def has_satdump(self):
         """
-        OpenWebRX uses [SatDump](https://github.com/SatDump/SatDump) software
+        DuckSdr uses [SatDump](https://github.com/SatDump/SatDump) software
         suite to receive weather satellite transmissions. The `satdump`
         packages are available from its
         [homepage](https://github.com/SatDump/SatDump).
@@ -896,7 +896,7 @@ class FeatureDetector(object):
 
     def has_nrsc5(self):
         """
-        OpenWebRX uses the [Nrsc5](https://github.com/theori-io/nrsc5) tool
+        DuckSdr uses the [Nrsc5](https://github.com/theori-io/nrsc5) tool
         to decode HDRadio broadcasts. You can install the `nrsc5` package
         from the OpenWebRX+ repositories.
         """
@@ -904,7 +904,7 @@ class FeatureDetector(object):
 
     def has_hamlib(self):
         """
-        OpenWebRX uses the [Hamlib](https://github.com/Hamlib/Hamlib) `rigctl`
+        DuckSdr uses the [Hamlib](https://github.com/Hamlib/Hamlib) `rigctl`
         tool to synchronize frequency and modulation with external transceivers.
         The `hamlib` package is available in most Linux distributions.
         """
@@ -912,7 +912,7 @@ class FeatureDetector(object):
 
     def has_csdr_skimmer(self):
         """
-        OpenWebRX uses the [CSDR Skimmer](https://github.com/luarvique/csdr-skimmer)
+        DuckSdr uses the [CSDR Skimmer](https://github.com/luarvique/csdr-skimmer)
         to decode multiple CW and RTTY signals at once. You can install
         the `csdr-skimmer` package from the OpenWebRX+ repositories.
         """
@@ -920,7 +920,7 @@ class FeatureDetector(object):
 
     def has_sonde_rs(self):
         """
-        OpenWebRX uses Zilog decoders in [Project Horus](https://github.com/projecthorus/radiosonde_auto_rx)
+        DuckSdr uses Zilog decoders in [Project Horus](https://github.com/projecthorus/radiosonde_auto_rx)
         to decode radiosonde data. You can install the
         `sonde-decoders` package from the OpenWebRX+ repositories.
         """
@@ -928,7 +928,7 @@ class FeatureDetector(object):
 
     def has_lorarx(self):
         """
-        OpenWebRX uses the LoraRX decoder from the [dxlAPRS](http://oe5dxl.hamspirit.at:8025/aprs/c/)
+        DuckSdr uses the LoraRX decoder from the [dxlAPRS](http://oe5dxl.hamspirit.at:8025/aprs/c/)
         project to decode LoRa data. You can install the
         `dxlaprs-lora` package from the OpenWebRX+ repositories.
         """
@@ -936,7 +936,7 @@ class FeatureDetector(object):
 
     def has_py_meshtastic(self):
         """
-        OpenWebRX uses [Meshtastic](https://pypi.org/project/meshtastic/) Python library
+        DuckSdr uses [Meshtastic](https://pypi.org/project/meshtastic/) Python library
         to decode Meshtastic traffic. You can install the
         `python3-meshtastic` package from the OpenWebRX+ repositories.
         """
@@ -948,7 +948,7 @@ class FeatureDetector(object):
 
     def has_lame(self):
         """
-        OpenWebRX uses the [LAME](https://lame.sourceforge.io/) tool
+        DuckSdr uses the [LAME](https://lame.sourceforge.io/) tool
         to compress recorded audio into MP3 format. The `lame` package
         is available in most Linux distributions.
         """
@@ -956,7 +956,7 @@ class FeatureDetector(object):
 
     def has_aprs_symbols(self):
         """
-        OpenWebRX uses a collection of APRS symbol icons to show APRS
+        DuckSdr uses a collection of APRS symbol icons to show APRS
         traffic at the map. You can install the `aprs-symbols` package
         from the OpenWebRX repositories.
         """
@@ -964,7 +964,7 @@ class FeatureDetector(object):
 
     def has_tetrarx(self):
         """
-        OpenWebRX uses TetraRX decoder from the [dxlAPRS](http://oe5dxl.hamspirit.at:8025/aprs/c)
+        DuckSdr uses TetraRX decoder from the [dxlAPRS](http://oe5dxl.hamspirit.at:8025/aprs/c)
         project to decode TETRA signals. Compile and install it by placing
         the `tetrarx` binary in your PATH (e.g. /usr/local/bin).
         """
@@ -972,7 +972,7 @@ class FeatureDetector(object):
 
     def has_whisper(self):
         """
-        OpenWebRX uses [Whisper.cpp](https://github.com/ggml-org/whisper.cpp)
+        DuckSdr uses [Whisper.cpp](https://github.com/ggml-org/whisper.cpp)
         tool to transcribe and translate speech transmissions. Configure your
         Whisper server URL in the Settings.
         """

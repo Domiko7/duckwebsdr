@@ -63,7 +63,7 @@ def reportServerState(state):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="OpenWebRX - Open Source SDR Web App for Everyone!")
+    parser = argparse.ArgumentParser(description="DuckSdr - Open Source SDR Web App for Everyone!")
     parser.add_argument(
         "-c",
         "--config",
@@ -91,7 +91,7 @@ def main():
         logging.getLogger().setLevel(logging.DEBUG)
 
     if args.version:
-        print("OpenWebRX+ version {version}".format(version=openwebrx_version))
+        print("DuckSdr version {version}".format(version=openwebrx_version))
         return 0
 
     CoreConfig.load(args.config)
@@ -109,7 +109,7 @@ def start_receiver(loglevel=None):
     print(
         """
 
-OpenWebRX+ - Open Source SDR Web App for Everyone!  | for license see LICENSE file in the package
+DuckSdr - Open Source SDR Web App for Everyone!  | for license see LICENSE file in the package
 _________________________________________________________________________________________________
 
 Author contact info:    Marat Fayzullin <luarvique@gmail.com>
@@ -120,7 +120,7 @@ Support and info:       https://groups.io/g/openwebrx
         flush=True
     )
 
-    logger.info("OpenWebRX+ version {0} starting up...".format(openwebrx_version))
+    logger.info("DuckSdr version {0} starting up...".format(openwebrx_version))
 
     for sig in [signal.SIGINT, signal.SIGTERM]:
         signal.signal(sig, handleSignal)
@@ -140,7 +140,7 @@ Support and info:       https://groups.io/g/openwebrx
     failed = featureDetector.get_failed_requirements("core")
     if failed:
         logger.error(
-            "you are missing required dependencies to run openwebrx. "
+            "you are missing required dependencies to run DuckSdr. "
             "please check that the following core requirements are installed and up to date: %s",
             ", ".join(failed)
         )

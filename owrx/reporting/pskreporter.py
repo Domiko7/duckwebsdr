@@ -243,7 +243,7 @@ class Uploader(object):
             # locator
             Locator.fromCoordinates(pm["receiver_gps"]),
             # decodingSoftware
-            "OpenWebRX " + openwebrx_version,
+            "DuckSdr " + openwebrx_version,
         ]
         if "pskreporter_antenna_information" in pm and pm["pskreporter_antenna_information"] is not None:
             bodyFields += [pm["pskreporter_antenna_information"]]

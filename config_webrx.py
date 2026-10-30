@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-config_webrx: configuration options for OpenWebRX
+config_webrx: configuration options for DuckSdr
 
     This file is part of OpenWebRX,
     an open-source SDR receiver software with a web UI.
@@ -29,7 +29,7 @@ config_webrx: configuration options for OpenWebRX
 
     (It means that you do not have to redistribute config_rtl.py and
     config_webrx.py if you make any changes to these two configuration files,
-    and use them for running your web service with OpenWebRX.)
+    and use them for running your web service with DuckSdr.)
 """
 
 """
@@ -49,7 +49,7 @@ The new configuration storage is not intended to be edited manually.
 # configuration version. please only modify if you're able to perform the associated migration steps.
 version = 7
 
-# NOTE: you can find additional information about configuring OpenWebRX in the Wiki:
+# NOTE: you can find additional information about configuring DuckSdr in the Wiki:
 # https://github.com/jketterl/openwebrx/wiki/Configuration-guide
 
 # ==== Server settings ====
@@ -58,6 +58,7 @@ version = 7
 # ==== Web GUI configuration ====
 #receiver_name = "[Callsign]"
 #receiver_location = "Budapest, Hungary"
+#receiver_antenna = "Antenna or antennas used with this receiver"
 #receiver_asl = 200
 #receiver_admin = "example@example.com"
 #receiver_gps = {"lat": 47.000000, "lon": 19.000000}
@@ -66,7 +67,7 @@ version = 7
 # The lines below should give you some examples of what's possible.
 #photo_desc = """
 #You can add your own background photo and receiver information.<br />
-#Receiver is operated by: <a href="mailto:openwebrx@localhost" target="_blank">Receiver Operator</a><br/>
+#Receiver is operated by: <a href="mailto:ducksdr@localhost" target="_blank">Receiver Operator</a><br/>
 #Device: Receiver Device<br />
 #Antenna: Receiver Antenna<br />
 #Website: <a href="http://localhost" target="_blank">http://localhost</a>
@@ -281,7 +282,7 @@ Note: if you experience audio underruns while CPU usage is 100%, you can:
 #        \_waterfall_auto_levels["min"]_/ |__ current_min_power_level          | \_waterfall_auto_levels["max"]_/
 #                                                    current_max_power_level __|
 
-# This setting allows you to modify the precision of the frequency displays in OpenWebRX.
+# This setting allows you to modify the precision of the frequency displays in DuckSdr.
 # Set this to exponent of 10 to select the most precise digit in Hz you'd like to see
 # examples:
 # a value of 2 selects 10^2 = 100Hz tuning precision (default):
@@ -359,8 +360,8 @@ Note: if you experience audio underruns while CPU usage is 100%, you can:
 # aprs_igate_symbol = "R&"
 
 # Custom comment about igate 
-#   Default: OpenWebRX APRS gateway
-# aprs_igate_comment = "OpenWebRX APRS gateway"
+#   Default: DuckSdr APRS gateway
+# aprs_igate_comment = "DuckSdr APRS gateway"
 
 # Antenna Height and Gain details
 #   Unspecified by default

@@ -36,6 +36,7 @@ class StatusController(ReceiverIdController):
                 "gps": pm["receiver_gps"],
                 "asl": pm["receiver_asl"],
                 "location": pm["receiver_location"],
+                "antenna": pm["receiver_antenna"],
             },
             "max_clients": pm["max_clients"],
             "version": openwebrx_version,

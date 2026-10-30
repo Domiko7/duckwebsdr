@@ -317,8 +317,8 @@ class CustomWaterfall(Waterfall):
 
 
 class WaterfallOptions(DropdownEnum):
-    DEFAULT = ("Google Turbo Theme (OpenWebRX default)", GoogleTurboWaterfall)
-    TEEJEEZ = ("Theme by Teejeez (default in OpenWebRX < 0.20)", TeejeezWaterfall)
+    DEFAULT = ("Google Turbo Theme (DuckSdr default)", GoogleTurboWaterfall)
+    TEEJEEZ = ("Theme by Teejeez (default in DuckSdr < 0.20)", TeejeezWaterfall)
     HA7ILM  = ("Legacy Theme by Andras (HA7ILM)", Ha7ilmWaterfall)
     OCEAN   = ("Blue Ocean Theme by Zoran (9A6NDZ)", ZoranWaterfall)
     ECLIPSE = ("Eclipse Theme by Dimitar (LZ2DMV) and LZ4ZD", EclipseWaterfall)

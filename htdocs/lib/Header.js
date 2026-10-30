@@ -20,10 +20,12 @@ Header.prototype.setDetails = function(details) {
 
     // If receiver name has readable text, use it for window title
     var titleText = title.prop('textContent');
-    if (titleText.length>0) document.title = 'OpenWebRX+ | ' + titleText;
+    if (titleText.length>0) document.title = 'DuckSdr | ' + titleText;
 
     // Set the rest of details
-    this.el.find('.webrx-rx-desc').html(details['receiver_location'] + ' | Loc: ' + details['locator'] + ', ASL: ' + details['receiver_asl'] + ' m');
+    var desc = details['receiver_location'] + ' | Loc: ' + details['locator'] + ', ASL: ' + details['receiver_asl'] + ' m';
+    if (details['receiver_antenna']) desc += ' | Ant: ' + details['receiver_antenna'];
+    this.el.find('.webrx-rx-desc').html(desc);
     this.el.find('.webrx-rx-photo-title').html(details['photo_title']);
     this.el.find('.webrx-rx-photo-desc').html(details['photo_desc']);
 };

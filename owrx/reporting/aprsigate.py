@@ -270,7 +270,7 @@ class AprsIgate(FilteredReporter):
 
         callsign = pm["aprs_callsign"]
         password = pm["aprs_igate_password"]
-        software = "OpenWebRX " + openwebrx_version
+        software = "DuckSdr " + openwebrx_version
         login    = f"user {callsign} pass {password} vers {software}\r\n"
 
         try:
