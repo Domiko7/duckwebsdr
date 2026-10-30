@@ -141,3 +141,8 @@ Plugins._debug = function (msg) {
 Plugins._banner = function (name) {
     return 'PLUGINS: ' + (Plugins[name] && Plugins[name]._remote ? '[remote]' : '[local]') + ' "' + name + '" ';
 }
+
+// Far Frequency plugin!!
+// TODO: make it a setting
+await Plugins.load('https://0xaf.github.io/openwebrxplus-plugins/receiver/utils/utils.js');
+await Plugins.load('https://0xaf.github.io/openwebrxplus-plugins/receiver/frequency_far_jump/frequency_far_jump.js');
