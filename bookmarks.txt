@@ -1,0 +1,514 @@
+#
+# This file gets converted to the default bookmarks.json with the
+# makebookmarks.pl PERL script.
+#
+
+#
+# Shortwave curiosities
+#
+Squeaky Wheel|day||5473|USB
+Squeaky Wheel|night||3828|USB
+Goose|day|Ohvat-98|4310|USB
+Goose|night|Ohvat-98|3012|USB
+Pip|day||5448|USB
+Pip|night||3756|USB
+Buzzer|UVB-76||4625|USB
+Air Horn|||4020|USB
+D Marker||Fazan-37|3240|USB
+T Marker||Osnova-98|4182|USB
+
+#
+# Time signals
+#
+Time|WWV, WWVH, BPM||2500|USB
+Time|CHU|Canada|3330|USB
+Time|RWM|Moscow|4996|USB
+Time|EBC|Cadiz|4998|USB
+Time|WWV, WWVH, BPM||5000|USB
+Time|CHU|Canada|7850|USB
+Time|RWM|Moscow|9996|USB
+Time|WWV, WWVH, BPM||10000|USB
+Time|PLC|Jakarta|11440|USB
+Time|CHU|Canada|14670|USB
+Time|RWM|Moscow|14996|USB
+Time|WWV, WWVH, BPM||15000|USB
+Time|EBC|Cadiz|15006|USB
+Time|WWV|Fort Collins|20000|USB
+Time|WWV, OIZ||25000|USB
+
+#
+# German weather service RTTY broadcasts
+#
+DDH47|||147.3|RTTY450
+DDH9|||11039|RTTY450
+DDH8|||14467.3|RTTY450
+DDK2|||4583|RTTY450
+DDH7|||7646|RTTY450
+DDK9|||10100.8|RTTY450
+
+#
+# Weather NAVTEX / SITOR-B / DSC stations
+#
+NAVTEX|||490|SITORB
+NAVTEX|||518|SITORB
+NAVTEX|||4209.5|SITORB
+MSI|||4210|SITORB
+MSI|||6314|SITORB
+MSI|||8416.5|SITORB
+MSI|||12579|SITORB
+MSI|||16806.5|SITORB
+MSI|||19680.5|SITORB
+MSI|||22376|SITORB
+MSI|||26100.5|SITORB
+DSC|||2187.5|DSC
+DSC|||4207.5|DSC
+DSC|||6312|DSC
+DSC|||8414.5|DSC
+DSC|||12577|DSC
+DSC|||16804.5|DSC
+DSC|||156525|DSC
+
+#
+# NOAA weather broadcasts
+#
+NOAA-1|||162400|NFM
+NOAA-2|||162425|NFM
+NOAA-3|||162450|NFM
+NOAA-4|||162475|NFM
+NOAA-5|||162500|NFM
+NOAA-6|||162525|NFM
+NOAA-7|||162550|NFM
+
+#
+# Aircraft frequencies
+#
+Emergency|||121500|AM
+Emergency|||243000|AM
+HFGCS|USAF||4724|USB
+HFGCS|USAF||8992|USB
+HFGCS|USAF||11175|USB
+HFGCS|USAF||15016|USB
+MARS|USAF||13927|USB
+MARS|USN||14441|USB
+CAF|Canada||11232|USB
+
+#
+# ACARS frequencies
+#
+ACARS|USA & Canada 3||129125|ACARS
+ACARS|USA & Canada 2||130025|ACARS
+ACARS|USA 3||130425|ACARS
+ACARS|USA & Canada 4||130450|ACARS
+ACARS|USA 4||131125|ACARS
+ACARS|Japan||131450|ACARS
+ACARS|AirCanada||131475|ACARS
+ACARS|Europe 2||131525|ACARS
+ACARS|Worldwide||131550|ACARS
+ACARS|Europe||131725|ACARS
+ACARS|Europe 4||131850|ACARS
+ACARS|Delta & JetBlue||136675|ACARS
+ACARS|USA 5||136700|ACARS
+ACARS|Delta||136725|ACARS
+ACARS|USA 6||136750|ACARS
+ACARS|Airlines||136775|ACARS
+ACARS|USA 7||136800|ACARS
+SITA|North America||136850|ACARS
+ACARS|Europe 3||136900|ACARS
+ACARS|Europe 5||131825|ACARS
+
+#
+# VDL2 frequencies
+#
+ARINC|USA||136650|VDL2
+ARINC|USA||136700|VDL2
+SITA|USA||136800|VDL2
+ARINC|Europe||136725|VDL2
+SITA|Europe||136775|VDL2
+ARINC|Europe||136825|VDL2
+SITA|Europe||136875|VDL2
+SITA & ARINC|Worldwide||136975|VDL2
+
+#
+# HFDL ground stations
+#
+GS-1|San Francisco|California|5508|HFDL
+GS-1|San Francisco|California|6559|HFDL
+GS-1|San Francisco|California|8927|HFDL
+GS-1|San Francisco|California|10081|HFDL
+GS-1|San Francisco|California|11327|HFDL
+GS-1|San Francisco|California|13276|HFDL
+GS-1|San Francisco|California|17919|HFDL
+GS-1|San Francisco|California|21934|HFDL
+GS-2|Molokai|Hawaii|5514|HFDL
+GS-2|Molokai|Hawaii|6565|HFDL
+GS-2|Molokai|Hawaii|8912|HFDL
+GS-2|Molokai|Hawaii|8936|HFDL
+GS-2|Molokai|Hawaii|10027|HFDL
+GS-2|Molokai|Hawaii|11312|HFDL
+GS-2|Molokai|Hawaii|11348|HFDL
+GS-2|Molokai|Hawaii|13276|HFDL
+GS-2|Molokai|Hawaii|13312|HFDL
+GS-2|Molokai|Hawaii|13324|HFDL
+GS-2|Molokai|Hawaii|17919|HFDL
+GS-2|Molokai|Hawaii|21937|HFDL
+GS-3|Reykjavik|Iceland|3900|HFDL
+GS-3|Reykjavik|Iceland|5720|HFDL
+GS-3|Reykjavik|Iceland|6712|HFDL
+GS-3|Reykjavik|Iceland|8977|HFDL
+GS-3|Reykjavik|Iceland|11184|HFDL
+GS-3|Reykjavik|Iceland|15025|HFDL
+GS-3|Reykjavik|Iceland|17985|HFDL
+GS-4|Riverhead|New York|5652|HFDL
+GS-4|Riverhead|New York|6661|HFDL
+GS-4|Riverhead|New York|8912|HFDL
+GS-4|Riverhead|New York|11387|HFDL
+GS-4|Riverhead|New York|13276|HFDL
+GS-4|Riverhead|New York|17919|HFDL
+GS-4|Riverhead|New York|21931|HFDL
+GS-5|Auckland|New Zealand|5583|HFDL
+GS-5|Auckland|New Zealand|6535|HFDL
+GS-5|Auckland|New Zealand|8921|HFDL
+GS-5|Auckland|New Zealand|10084|HFDL
+GS-5|Auckland|New Zealand|13351|HFDL
+GS-5|Auckland|New Zealand|17916|HFDL
+GS-6|Hat Yai|Thailand|5655|HFDL
+GS-6|Hat Yai|Thailand|6535|HFDL
+GS-6|Hat Yai|Thailand|8825|HFDL
+GS-6|Hat Yai|Thailand|10066|HFDL
+GS-6|Hat Yai|Thailand|13270|HFDL
+GS-6|Hat Yai|Thailand|17928|HFDL
+GS-6|Hat Yai|Thailand|21949|HFDL
+GS-7|Shannon|Ireland|2998|HFDL
+GS-7|Shannon|Ireland|3455|HFDL
+GS-7|Shannon|Ireland|5547|HFDL
+GS-7|Shannon|Ireland|6532|HFDL
+GS-7|Shannon|Ireland|8843|HFDL
+GS-7|Shannon|Ireland|8942|HFDL
+GS-7|Shannon|Ireland|10081|HFDL
+GS-7|Shannon|Ireland|11384|HFDL
+GS-8|Johannesburg|South Africa|3016|HFDL
+GS-8|Johannesburg|South Africa|4681|HFDL
+GS-8|Johannesburg|South Africa|5529|HFDL
+GS-8|Johannesburg|South Africa|8834|HFDL
+GS-8|Johannesburg|South Africa|11321|HFDL
+GS-8|Johannesburg|South Africa|13321|HFDL
+GS-8|Johannesburg|South Africa|17922|HFDL
+GS-8|Johannesburg|South Africa|21949|HFDL
+GS-9|Barrow|Alaska|2944|HFDL
+GS-9|Barrow|Alaska|2992|HFDL
+GS-9|Barrow|Alaska|3007|HFDL
+GS-9|Barrow|Alaska|3497|HFDL
+GS-9|Barrow|Alaska|4654|HFDL
+GS-9|Barrow|Alaska|4687|HFDL
+GS-9|Barrow|Alaska|5529|HFDL
+GS-9|Barrow|Alaska|5538|HFDL
+GS-9|Barrow|Alaska|5544|HFDL
+GS-9|Barrow|Alaska|6646|HFDL
+GS-9|Barrow|Alaska|8927|HFDL
+GS-9|Barrow|Alaska|8936|HFDL
+GS-9|Barrow|Alaska|10027|HFDL
+GS-9|Barrow|Alaska|10093|HFDL
+GS-9|Barrow|Alaska|11354|HFDL
+GS-9|Barrow|Alaska|17919|HFDL
+GS-9|Barrow|Alaska|17934|HFDL
+GS-9|Barrow|Alaska|21928|HFDL
+GS-9|Barrow|Alaska|21937|HFDL
+GS-10|Muan|South Korea|2941|HFDL
+GS-10|Muan|South Korea|5502|HFDL
+GS-10|Muan|South Korea|6619|HFDL
+GS-10|Muan|South Korea|8939|HFDL
+GS-10|Muan|South Korea|10060|HFDL
+GS-10|Muan|South Korea|13342|HFDL
+GS-10|Muan|South Korea|17958|HFDL
+GS-10|Muan|South Korea|21931|HFDL
+GS-11|Albrook|Panama|5589|HFDL
+GS-11|Albrook|Panama|6589|HFDL
+GS-11|Albrook|Panama|8894|HFDL
+GS-11|Albrook|Panama|10063|HFDL
+GS-11|Albrook|Panama|13264|HFDL
+GS-11|Albrook|Panama|17901|HFDL
+GS-13|Santa Cruz|Bolivia|4660|HFDL
+GS-13|Santa Cruz|Bolivia|6628|HFDL
+GS-13|Santa Cruz|Bolivia|8957|HFDL
+GS-13|Santa Cruz|Bolivia|11318|HFDL
+GS-13|Santa Cruz|Bolivia|13315|HFDL
+GS-13|Santa Cruz|Bolivia|17916|HFDL
+GS-13|Santa Cruz|Bolivia|21997|HFDL
+GS-14|Krasnoyarsk|Russia|5622|HFDL
+GS-14|Krasnoyarsk|Russia|6596|HFDL
+GS-14|Krasnoyarsk|Russia|8886|HFDL
+GS-14|Krasnoyarsk|Russia|10087|HFDL
+GS-14|Krasnoyarsk|Russia|13321|HFDL
+GS-14|Krasnoyarsk|Russia|17912|HFDL
+GS-14|Krasnoyarsk|Russia|21990|HFDL
+GS-15|Al Muharraq|Bahrain|5544|HFDL
+GS-15|Al Muharraq|Bahrain|8885|HFDL
+GS-15|Al Muharraq|Bahrain|10075|HFDL
+GS-15|Al Muharraq|Bahrain|13354|HFDL
+GS-15|Al Muharraq|Bahrain|17967|HFDL
+GS-15|Al Muharraq|Bahrain|21982|HFDL
+GS-16|Agana|Guam|5451|HFDL
+GS-16|Agana|Guam|6652|HFDL
+GS-16|Agana|Guam|8927|HFDL
+GS-16|Agana|Guam|11306|HFDL
+GS-16|Agana|Guam|13312|HFDL
+GS-16|Agana|Guam|17919|HFDL
+GS-16|Agana|Guam|21928|HFDL
+GS-17|Gran Canarias|Spain|6529|HFDL
+GS-17|Gran Canarias|Spain|8948|HFDL
+GS-17|Gran Canarias|Spain|11348|HFDL
+GS-17|Gran Canarias|Spain|13303|HFDL
+GS-17|Gran Canarias|Spain|17928|HFDL
+GS-17|Gran Canarias|Spain|21955|HFDL
+
+#
+# Weather fax stations
+#
+JMH|Tokyo|Japan|3622.5|FAX
+JMH2|Tokyo|Japan|7795|FAX
+JMH4|Tokyo|Japan|13988.5|FAX
+PVK|Pevek|Russia|148|FAX
+HLL2|Seoul|South Korea|3585|FAX
+HLL2|Seoul|South Korea|5857.5|FAX
+HLL2|Seoul|South Korea|7433.5|FAX
+HLL2|Seoul|South Korea|9165|FAX
+HLL2|Seoul|South Korea|13570|FAX
+HSW64|Bangkok|Thailand|7395|FAX
+JJC|Kyodo News|Japan|4316|FAX
+JJC|Kyodo News|Japan|8467.5|FAX
+JJC|Kyodo News|Japan|12745.5|FAX
+JJC|Kyodo News|Japan|16971|FAX
+JJC|Kyodo News|Japan|17069.6|FAX
+JJC|Kyodo News|Japan|22542|FAX
+9VF|Kyodo News|Japan|16035|FAX
+9VF|Kyodo News|Japan|17430|FAX
+XSQ|Guangzhou|China|4199.75|FAX
+XSQ|Guangzhou|China|8412.5|FAX
+XSQ|Guangzhou|China|12629.25|FAX
+XSQ|Guangzhou|China|16826.25|FAX
+CBV|Valparaiso Playa Ancha|Chile|4228|FAX
+CBV|Valparaiso Playa Ancha|Chile|8677|FAX
+CBV|Valparaiso Playa Ancha|Chile|17146.4|FAX
+CBM|Punta Arenas Maganalles|Chile|4322|FAX
+CBM|Punta Arenas Maganalles|Chile|8696|FAX
+CFH|Halifax|Canada|122.5|FAX
+CFH|Halifax|Canada|4271|FAX
+CFH|Halifax|Canada|6496.4|FAX
+CFH|Halifax|Canada|10536|FAX
+CFH|Halifax|Canada|13510|FAX
+VFF|Iqalut|Canada|3253|FAX
+VFF|Iqalut|Canada|7710|FAX
+VFR|Resolute|Canada|7710|FAX
+VFR|Resolute|Canada|3253|FAX
+VCO|Sydney|Canada|4416|FAX
+VCO|Sydney|Canada|6915.1|FAX
+VFA|Inuvik|Canada|4292|FAX
+VFA|Inuvik|Canada|8456|FAX
+NOJ|Kodiak|Alaska|2054|FAX
+NOJ|Kodiak|Alaska|4298|FAX
+NOJ|Kodiak|Alaska|8459|FAX
+NOJ|Kodiak|Alaska|12412.5|FAX
+NMC|Point Reyes|California|4346|FAX
+NMC|Point Reyes|California|8682|FAX
+NMC|Point Reyes|California|12786|FAX
+NMC|Point Reyes|California|17151.2|FAX
+NMC|Point Reyes|California|22527|FAX
+NMG|New Orleans|Louisiana|4317.9|FAX
+NMG|New Orleans|Louisiana|8503.9|FAX
+NMG|New Orleans|Louisiana|12789.9|FAX
+NMG|New Orleans|Louisiana|17146.4|FAX
+NMF|Boston|Massachusetts|4235|FAX
+NMF|Boston|Massachusetts|6340.5|FAX
+NMF|Boston|Massachusetts|9110|FAX
+NMF|Boston|Massachusetts|12750|FAX
+VMC|Charleville|Australia|2628|FAX
+VMC|Charleville|Australia|5100|FAX
+VMC|Charleville|Australia|11030|FAX
+VMC|Charleville|Australia|13920|FAX
+VMC|Charleville|Australia|20469|FAX
+VMW|Wiluna|Australia|5755|FAX
+VMW|Wiluna|Australia|7535|FAX
+VMW|Wiluna|Australia|10555|FAX
+VMW|Wiluna|Australia|15615|FAX
+VMW|Wiluna|Australia|18060|FAX
+ZKLF|Wellington|New Zealand|3247.4|FAX
+ZKLF|Wellington|New Zealand|5807|FAX
+ZKLF|Wellington|New Zealand|9459|FAX
+ZKLF|Wellington|New Zealand|13550.5|FAX
+ZKLF|Wellington|New Zealand|16340.1|FAX
+KVM70|Honolulu|Hawaii|9982.5|FAX
+KVM70|Honolulu|Hawaii|11090|FAX
+KVM70|Honolulu|Hawaii|16135|FAX
+SVJ4|Athens|Greece|4481|FAX
+SVJ4|Athens|Greece|8105|FAX
+RBW41|Murmansk|Russia|5336|FAX
+RBW41|Murmansk|Russia|6445.5|FAX
+RBW41|Murmansk|Russia|7908.8|FAX
+RBW48|Murmansk|Russia|10130|FAX
+DDH3|Hamburg|Germany|3855|FAX
+DDK3|Hamburg|Germany|7880|FAX
+DDK6|Hamburg|Germany|13882.5|FAX
+GYA|Northwood|UK|2618.5|FAX
+GYA|Northwood|UK|4610|FAX
+GYA|Northwood|UK|8040|FAX
+GYA|Northwood|UK|11086.5|FAX
+
+#
+# CB channels
+#
+CB1|||26965|AM
+CB2|||26975|AM
+CB3|||26985|AM
+CB4|||27005|AM
+CB5|||27015|AM
+CB6|||27025|AM
+CB7|||27035|AM
+CB8|||27055|AM
+CB9|||27065|AM
+CB10|||27075|AM
+CB11|||27085|AM
+CB12|||27105|AM
+CB13|||27115|AM
+CB14|||27125|AM
+CB15|||27135|AM
+CB16|||27155|LSB
+CB17|||27165|AM
+CB18|||27175|AM
+CB19|||27185|AM
+CB20|||27205|AM
+CB21|||27215|AM
+CB22|||27225|AM
+CB23|||27255|AM
+CB24|||27235|AM
+CB25|||27245|AM
+CB26|||27265|AM
+CB27|||27275|AM
+CB28|||27285|AM
+CB29|||27295|AM
+CB30|||27305|AM
+CB31|||27315|AM
+CB32|||27325|AM
+CB33|||27335|AM
+CB34|||27345|AM
+CB35|||27355|AM
+CB36|||27365|LSB
+CB37|||27375|LSB
+CB38|||27385|LSB
+CB39|||27395|LSB
+CB40|||27405|LSB
+
+#
+# GMRS channels (USA)
+#
+GMRS1|||462562.5|NFM
+GMRS2|||462587.5|NFM
+GMRS3|||462612.5|NFM
+GMRS4|||462637.5|NFM
+GMRS5|||462662.5|NFM
+GMRS6|||462687.5|NFM
+GMRS7|||462712.5|NFM
+GMRS8|||467562.5|NFM
+GMRS9|||467587.5|NFM
+GMRS10|||467612.5|NFM
+GMRS11|||467637.5|NFM
+GMRS12|||467662.5|NFM
+GMRS13|||467687.5|NFM
+GMRS14|||467712.5|NFM
+GMRS15|||462550|NFM
+GMRS16|||462575|NFM
+GMRS17|||462600|NFM
+GMRS18|||462625|NFM
+GMRS19|||462650|NFM
+GMRS20|||462675|NFM
+GMRS21|||462700|NFM
+GMRS22|||462725|NFM
+GMRS15R|||467550|NFM
+GMRS16R|||467575|NFM
+GMRS17R|||467600|NFM
+GMRS18R|||467625|NFM
+GMRS19R|||467650|NFM
+GMRS20R|||467675|NFM
+GMRS21R|||467700|NFM
+GMRS22R|||467725|NFM
+
+#
+# PMR channels (Europe)
+#
+PMR1|||446006.25|NFM
+PMR2|||446018.75|NFM
+PMR3|||446031.25|NFM
+PMR4|||446043.75|NFM
+PMR5|||446056.25|NFM
+PMR6|||446068.75|NFM
+PMR7|||446081.25|NFM
+PMR8|||446093.75|NFM
+PMR9|||446106.25|NFM
+PMR10|||446118.75|NFM
+PMR11|||446131.25|NFM
+PMR12|||446143.75|NFM
+PMR13|||446156.25|NFM
+PMR14|||446168.75|NFM
+PMR15|||446181.25|NFM
+PMR16|||446193.75|NFM
+
+#
+# MURS channels (USA)
+#
+MURS1|||151820|NFM
+MURS2|||151880|NFM
+MURS3|||151940|NFM
+MURS4|||154570|NFM
+MURS5|||154600|NFM
+
+#
+# KDR444 / SRBR444 (Sweden, Norway)
+#
+KDR1|||444600|NFM
+KDR2|||444650|NFM
+KDR3|||444800|NFM
+KDR4|||444825|NFM
+KDR5|||444850|NFM
+KDR6|||444875|NFM
+KDR7|||444925|NFM
+KDR8|||444975|NFM
+
+#
+# RHA68 (Finland)
+#
+RHA1|Roadside Assistance||68100|NFM
+RHA2|Motor Sports||68300|NFM
+RHA3|Rescue||68425|NFM
+RHA4|Motor Sports||68525|NFM
+RHA5|||68050|NFM
+RHA6|||68575|NFM
+RHA7|||68175|NFM
+RHA8|||67500|NFM
+RHA9|||71375|NFM
+RHA10|||71425|NFM
+RHA11|||71475|NFM
+RHA12|||71625|NFM
+RHA13|||70200|NFM
+RHA14|||71025|NFM
+RHA15|||71050|NFM
+RHA16|||71100|NFM
+RHA17|Rescue||68225|NFM
+RHA18|||68375|NFM
+RHA19|||71175|NFM
+RHA20|||71750|NFM
+RHA21|||71900|NFM
+RHA22|||71350|NFM
+RHA23|||71550|NFM
+RHA24|||71575|NFM
+RHA25|||71600|NFM
+RHA26|||72325|NFM
+
+#
+# DSC
+#
+DSC|||2187500|DSC
+DSC|||4207500|DSC
+DSC|||6312000|DSC
+DSC|||8414500|DSC
+DSC|||12577000|DSC
+DSC|||16804500|DSC
+DSC|||156525000|DSC

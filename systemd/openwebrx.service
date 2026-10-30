@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenWebRX WebSDR receiver
+
+[Service]
+Type=simple
+User=openwebrx
+Group=openwebrx
+ExecStart=/usr/bin/openwebrx
+Restart=always
+Environment="HOME=/tmp"
+
+[Install]
+WantedBy=multi-user.target

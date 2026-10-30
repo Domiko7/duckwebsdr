@@ -1,0 +1,64 @@
+Source: openwebrx
+Maintainer: Marat Fayzullin <luarvique@gmail.com>
+Section: hamradio
+Priority: optional
+Rules-Requires-Root: no
+Standards-Version: 4.2.0
+Build-Depends: debhelper (>= 11),
+               dh-python,
+               python3-all (>= 3.5),
+               python3-setuptools
+Homepage: https://www.openwebrx.de/
+Vcs-Browser: https://github.com/luarvique/openwebrx
+Vcs-Git: https://github.com/luarvique/openwebrx.git
+
+Package: openwebrx
+Architecture: all
+Depends: adduser,
+         python3 (>= 3.5),
+         python3-pkg-resources,
+         python3-distutils-extra,
+	 owrx-connector (>= 0.6.5),
+	 python3-csdr (>= 0.18.40),
+         ${python3:Depends},
+         ${misc:Depends}
+Recommends: python3-digiham (>= 0.6.11),
+            direwolf (>= 1.4),
+            wsjtx,
+            js8call,
+            runds-connector (>= 0.2),
+            hpsdrconnector,
+            aprs-symbols,
+            m17-demod,
+            js8call,
+            python3-js8py (>= 0.1),
+            nmux (>= 0.18),
+            codecserver (>= 0.1),
+            msk144decoder,
+            dump1090-fa-minimal,
+            dump978-fa-minimal,
+            dumphfdl,
+            dumpvdl2,
+            acarsdec (>= 4.0),
+            rtl-433,
+            extra-sdr-drivers,
+            perseus-tools,
+            dream-headless,
+            codec2,
+            redsea,
+            python3-csdr-eti,
+            python3-paho-mqtt,
+            python3-meshtastic,
+            python3-pycryptodome,
+            dablin,
+            multimon-ng,
+            imagemagick,
+            nrsc5,
+            libhamlib-utils,
+            csdr-skimmer,
+            sonde-decoders,
+            dxlaprs-lora,
+            lame,
+            dream
+Description: multi-user web sdr
+ Open source, multi-user SDR receiver with a web interface

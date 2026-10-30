@@ -1,0 +1,5 @@
+**/*.pyc
+**/*.swp
+tags
+.idea
+packages
