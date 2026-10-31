@@ -814,11 +814,11 @@ function canvas_mousewheel(evt) {
 
 
 // The waterfall contains fft_size bins of real data, so zooming just stretches
-// those bins. Allow each bin to be magnified by up to 16 screen pixels; this
+// those bins. Allow each bin to be magnified by up to 128 screen pixels; this
 // gives the same pixel density as the old 33 Hz/pixel limit on a 4096-bin FFT,
 // but works for every source (including narrow-band ones) because it scales
 // with the actual FFT resolution instead of a fixed Hz/pixel value.
-var zoom_max_upscale = 16;
+var zoom_max_upscale = 128;
 var zoom_levels_count = 24;
 
 function get_max_zoom_coeff() {
