@@ -2,21 +2,21 @@
 #
 # deploy-docker.sh
 #
-# Replace a Docker-based OpenWebRX+ container with DuckSdr, keeping the same
-# port, the same devices, the same volumes and the same in-container config.
+# Deploy or update DuckSdr in Docker, keeping the same port, devices, volumes
+# and in-container config. Works both for the first switch from OpenWebRX+
+# and for every later update.
 #
 # Run it from the DuckSdr source checkout:
-#   bash deploy-docker.sh
-#   bash deploy-docker.sh --rollback
+#   bash deploy-docker.sh              deploy or update
+#   bash deploy-docker.sh --rollback   go back to the previous container
 #
 # Environment:
-#   OLD=openwebrx      existing container name
-#   NEW=ducksdr        new container name
-#   KEEP_ON_FAILURE=1  leave the failed container in place instead of rolling back
+#   OLD=<name>         container to replace (auto-detected: ducksdr, else openwebrx)
+#   NEW=ducksdr        name of the DuckSdr container
+#   KEEP_ON_FAILURE=1  leave a failed container in place instead of rolling back
 #
 set -euo pipefail
 
-OLD="${OLD:-openwebrx}"
 NEW="${NEW:-ducksdr}"
 REPO="${REPO:-$(pwd)}"
 
@@ -26,11 +26,28 @@ die() { printf '\nERROR: %s\n' "$*" >&2; exit 1; }
 command -v docker >/dev/null || die "docker not found"
 [ -f "$REPO/owrx/version.py" ] || die "run this from the DuckSdr checkout (no owrx/version.py in $REPO)"
 
+if [ -z "${OLD:-}" ]; then
+    if docker inspect "$NEW" >/dev/null 2>&1; then
+        OLD="$NEW"        # update in place
+    else
+        OLD="openwebrx"   # first switch from OpenWebRX+
+    fi
+fi
+
 case "${1:-}" in
     --rollback)
-        docker rm -f "$NEW" >/dev/null 2>&1 || true
-        docker start "$OLD"
-        say "Rolled back: $OLD is running, $NEW removed"
+        if docker inspect "${NEW}-prev" >/dev/null 2>&1; then
+            docker rm -f "$NEW" >/dev/null 2>&1 || true
+            docker rename "${NEW}-prev" "$NEW"
+            docker start "$NEW"
+            say "Rolled back to the previous DuckSdr container ($NEW)"
+        elif docker inspect "$OLD" >/dev/null 2>&1; then
+            docker rm -f "$NEW" >/dev/null 2>&1 || true
+            docker start "$OLD"
+            say "Rolled back: $OLD is running"
+        else
+            die "nothing to roll back to"
+        fi
         exit 0
         ;;
     --help|-h) sed -n '2,18p' "$0"; exit 0 ;;
@@ -45,6 +62,11 @@ fi
 
 BASE_IMAGE="$(docker inspect -f '{{.Config.Image}}' "$OLD")"
 ORIG_USER="$(docker inspect -f '{{.Config.User}}' "$OLD")"
+if [ "$OLD" = "$NEW" ]; then
+    say "Update mode: replacing running container $OLD"
+else
+    say "Switch mode: $OLD -> $NEW"
+fi
 say "Existing container : $OLD (image $BASE_IMAGE)"
 say "Source checkout    : $REPO"
 
@@ -149,6 +171,11 @@ echo "Will run:"
 echo "  $RUNC"
 echo
 
+PREV="${NEW}-prev"
+if [ "$OLD" = "$NEW" ]; then
+    docker rm -f "$PREV" >/dev/null 2>&1 || true
+    docker rename "$OLD" "$PREV"
+fi
 docker rm -f "$NEW" >/dev/null 2>&1 || true
 eval "$RUNC"
 
@@ -173,6 +200,11 @@ if [ "$OK" -ne 1 ]; then
         die "DuckSdr did not answer on port $PORT (KEEP_ON_FAILURE=1, container $NEW left in place)"
     fi
     docker rm -f "$NEW" >/dev/null 2>&1 || true
+    if [ "$OLD" = "$NEW" ] && docker inspect "$PREV" >/dev/null 2>&1; then
+        docker rename "$PREV" "$NEW"
+        docker start "$NEW" >/dev/null 2>&1 || true
+        die "DuckSdr did not answer on port $PORT; restored the previous $NEW"
+    fi
     docker start "$OLD" >/dev/null 2>&1 || true
     die "DuckSdr did not answer on port $PORT; rolled back to $OLD"
 fi
@@ -188,5 +220,11 @@ PY
 say "DuckSdr is live on port $PORT"
 echo "  Container : $NEW"
 echo "  Logs      : docker logs -f $NEW"
-echo "  Rollback  : docker rm -f $NEW && docker start $OLD   (or: bash $0 --rollback)"
-echo "  Cleanup   : docker rm $OLD    (only once you are happy)"
+echo "  Rollback  : bash $0 --rollback"
+if [ "$OLD" = "$NEW" ]; then
+    echo "  Previous  : $PREV (stopped; removed on the next update)"
+    echo "  Cleanup   : docker rm $PREV    (once you are happy)"
+elif docker inspect "$OLD" >/dev/null 2>&1; then
+    echo "  Previous  : $OLD (stopped)"
+    echo "  Cleanup   : docker rm $OLD    (once you are happy)"
+fi
