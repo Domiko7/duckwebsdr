@@ -1,4 +1,4 @@
-from distutils.version import LooseVersion
+from owrx.version_compat import LooseVersion
 
 _versionstring = "1.2.128"
 looseversion = LooseVersion(_versionstring)

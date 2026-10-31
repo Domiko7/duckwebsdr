@@ -2,7 +2,7 @@ import subprocess
 from functools import reduce
 from operator import and_
 import re
-from distutils.version import LooseVersion, StrictVersion
+from owrx.version_compat import LooseVersion, StrictVersion
 import inspect
 from owrx.config.core import CoreConfig
 from owrx.config import Config
