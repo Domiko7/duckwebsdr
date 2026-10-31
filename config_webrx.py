@@ -87,14 +87,14 @@ version = 7
 # If you're not sure, simply copy & paste the code you received from your listing site below this line:
 
 # ==== DSP/RX settings ====
-#fft_fps = 9
-#fft_size = 4096  # Should be power of 2
+#fft_fps = 20
+#fft_size = 16384  # Should be power of 2
 #fft_voverlap_factor = (
-#    0.3  # If fft_voverlap_factor is above 0, multiple FFTs will be used for creating a line on the diagram.
+#    0.5  # If fft_voverlap_factor is above 0, multiple FFTs will be used for creating a line on the diagram.
 #)
 
 #audio_compression = "adpcm"  # valid values: "adpcm", "none"
-#fft_compression = "adpcm"  # valid values: "adpcm", "none"
+#fft_compression = "none"  # valid values: "adpcm", "none"
 
 # Tau setting for WFM (broadcast FM) deemphasis\
 # Quote from wikipedia https://en.wikipedia.org/wiki/FM_broadcasting#Pre-emphasis_and_de-emphasis
@@ -103,7 +103,7 @@ version = 7
 # wfm_deemphasis_tau = 75e-6  # for US and South Korea
 #wfm_deemphasis_tau = 50e-6  # for the rest of the world
 
-#digimodes_fft_size = 2048
+#digimodes_fft_size = 4096
 
 # enables lookup of DMR ids using the radioid api
 #digital_voice_dmr_id_lookup = True

@@ -404,6 +404,28 @@ var scale_markers_levels = [
         "format": "{x} MHz",
         "pre_divide": 1000000,
         "decimals": 1
+    },
+    // finer markers for deep zoom (kHz with up to 1 Hz resolution)
+    {
+        "large_marker_per_hz": 500,
+        "estimated_text_width": 80,
+        "format": "{x} kHz",
+        "pre_divide": 1000,
+        "decimals": 1
+    },
+    {
+        "large_marker_per_hz": 100,
+        "estimated_text_width": 80,
+        "format": "{x} kHz",
+        "pre_divide": 1000,
+        "decimals": 2
+    },
+    {
+        "large_marker_per_hz": 10,
+        "estimated_text_width": 80,
+        "format": "{x} kHz",
+        "pre_divide": 1000,
+        "decimals": 3
     }
 ];
 var scale_min_space_bw_texts = 50;
@@ -791,12 +813,17 @@ function canvas_mousewheel(evt) {
 }
 
 
-var zoom_max_level_hps = 33; //Hz/pixel
-var zoom_levels_count = 14;
+// The waterfall contains fft_size bins of real data, so zooming just stretches
+// those bins. Allow each bin to be magnified by up to 16 screen pixels; this
+// gives the same pixel density as the old 33 Hz/pixel limit on a 4096-bin FFT,
+// but works for every source (including narrow-band ones) because it scales
+// with the actual FFT resolution instead of a fixed Hz/pixel value.
+var zoom_max_upscale = 16;
+var zoom_levels_count = 24;
 
-function get_zoom_coeff_from_hps(hps) {
-    var shown_bw = (window.innerWidth * hps);
-    return bandwidth / shown_bw;
+function get_max_zoom_coeff() {
+    if (!fft_size) return 1;
+    return Math.max(1, (fft_size * zoom_max_upscale) / window.innerWidth);
 }
 
 var zoom_levels = [1];
@@ -809,16 +836,17 @@ var smeter_level = 0;
 
 function mkzoomlevels() {
     zoom_levels = [1];
-    var maxc = get_zoom_coeff_from_hps(zoom_max_level_hps);
-    if (maxc < 1) return;
-    // logarithmic interpolation
-    var zoom_ratio = Math.pow(maxc, 1 / zoom_levels_count);
+    var maxc = get_max_zoom_coeff();
+    if (maxc <= 1) return;
+    // logarithmic interpolation, with the last level reaching the maximum
+    var zoom_ratio = Math.pow(maxc, 1 / (zoom_levels_count - 1));
     for (var i = 1; i < zoom_levels_count; i++)
         zoom_levels.push(Math.pow(zoom_ratio, i));
+    if (zoom_level >= zoom_levels.length) zoom_level = zoom_levels.length - 1;
 }
 
 function zoom_step(out, where, onscreen) {
-    if ((out && zoom_level === 0) || (!out && zoom_level >= zoom_levels_count - 1)) return;
+    if ((out && zoom_level === 0) || (!out && zoom_level >= zoom_levels.length - 1)) return;
     if (out) --zoom_level;
     else ++zoom_level;
 

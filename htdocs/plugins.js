@@ -12,6 +12,19 @@ $(document).ready(function () {
     // detect which plugins to load
     Plugins._type = (typeof mapManager !== 'undefined') ? 'map' : 'receiver';
     Plugins.init();
+
+    // Far Frequency plugin, vendored locally under plugins/receiver/.
+    // This is a classic script, so no top-level await here.
+    // "utils" must finish loading first: frequency_far_jump depends on it.
+    if (Plugins._type === 'receiver') {
+        Plugins.load('utils')
+            .then(function () {
+                return Plugins.load('frequency_far_jump');
+            })
+            .catch(function (e) {
+                console.error('PLUGINS: failed to load the far frequency plugin', e);
+            });
+    }
 });
 
 // Initialize the Plugins class and some defaults
@@ -141,8 +154,3 @@ Plugins._debug = function (msg) {
 Plugins._banner = function (name) {
     return 'PLUGINS: ' + (Plugins[name] && Plugins[name]._remote ? '[remote]' : '[local]') + ' "' + name + '" ';
 }
-
-// Far Frequency plugin!!
-// TODO: make it a setting
-await Plugins.load('https://0xaf.github.io/openwebrxplus-plugins/receiver/utils/utils.js');
-await Plugins.load('https://0xaf.github.io/openwebrxplus-plugins/receiver/frequency_far_jump/frequency_far_jump.js');
