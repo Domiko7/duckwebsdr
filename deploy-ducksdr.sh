@@ -99,9 +99,12 @@ if [ -d "$REPO/.git" ]; then
     say "Updating $REPO"
     git -C "$REPO" pull --ff-only || die "git pull failed in $REPO; check 'git -C $REPO status' and resolve local changes"
 else
+    if [ -e "$REPO" ] && [ -n "$(ls -A "$REPO" 2>/dev/null)" ]; then
+        die "$REPO exists but is not a git checkout; remove it or run with REPO=/some/other/path"
+    fi
     say "Cloning DuckSdr into $REPO"
-    sudo mkdir -p "$(dirname "$REPO")"
-    sudo chown "$(id -u):$(id -g)" "$(dirname "$REPO")"
+    sudo mkdir -p "$REPO"
+    sudo chown "$(id -u):$(id -g)" "$REPO"
     git clone "$REPO_URL" "$REPO"
 fi
 
