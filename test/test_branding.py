@@ -7,12 +7,22 @@ HTDOCS = ROOT / "htdocs"
 
 class BrandingTest(unittest.TestCase):
     def test_duck_logo_asset_exists(self):
-        self.assertTrue((HTDOCS / "gfx" / "ducksdr-logo.png").is_file())
+        self.assertTrue((HTDOCS / "gfx" / "ducksdr-logo.svg").is_file())
 
     def test_header_uses_duck_logo(self):
         header = (HTDOCS / "include" / "header.include.html").read_text(encoding="utf-8")
-        self.assertIn("ducksdr-logo.png", header)
+        self.assertIn("ducksdr-logo.svg", header)
         self.assertNotIn("svg-defs.svg#top-logo", header)
+
+    def test_logo_is_wide_enough_for_the_header(self):
+        # width-based CSS sizing (261px in older cached stylesheets) must not
+        # turn the logo into a huge square that gets clipped by the 67px bar
+        svg = (HTDOCS / "gfx" / "ducksdr-logo.svg").read_text(encoding="utf-8")
+        self.assertIn('viewBox="0 0 591 100"', svg)
+
+    def test_logo_has_explicit_size(self):
+        header = (HTDOCS / "include" / "header.include.html").read_text(encoding="utf-8")
+        self.assertIn('height="43"', header)
 
     def test_index_title_is_ducksdr(self):
         index = (HTDOCS / "index.html").read_text(encoding="utf-8")

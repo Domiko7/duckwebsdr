@@ -59,6 +59,7 @@
 .webrx-top-logo {
     width: auto;
     height: 43px;
+    max-width: 278px;
     padding: 12px;
     filter: drop-shadow(0 0 2.5px rgba(0, 0, 0, .9));
     /* overwritten by media queries */
