@@ -88,6 +88,30 @@ The filter envelope can be dragged at its ends and moved around to set the passb
 
 However, if you hold down the shift key, you can drag the center line (BFO) or the whole passband (PBS).
 
+## rtl_tcp server
+
+Connector-based SDR devices can share their IQ stream over rtl_tcp while DuckSdr keeps using the device.
+
+The device always serves an rtl_tcp stream on localhost. To share it with the network:
+
+1. Open **Settings → SDR** and select the device.
+2. Add **Address for the rtl_tcp interface** and set it to `0.0.0.0`.
+3. Add **Network port for the rtl_tcp interface** and set it to the port clients connect to, for example `8074`.
+4. Save. The relay starts immediately, no receiver restart needed.
+
+**Local rtl_tcp port** is optional and only pins the localhost port. Leave it unset unless a program on the same
+machine needs a fixed port.
+
+With Docker, publish the network port when deploying:
+
+```bash
+EXTRA_PORTS=8074:8074 bash deploy-docker.sh
+```
+
+The published ports are kept on later updates, so the variable is only needed once. rtl_tcp is an 8-bit protocol;
+for 8-bit hardware such as the RTL-SDR the stream is bit-identical to the native samples, while wider devices are
+downsampled. Clients receive the tuning and sample rate selected in DuckSdr and cannot retune the hardware.
+
 ## Licensing
 
 DuckSdr is available under Affero GPL v3 license

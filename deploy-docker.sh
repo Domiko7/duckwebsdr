@@ -21,6 +21,7 @@ Environment:
   OLD=<name>          container to replace (default: ducksdr if it exists, else openwebrx)
   NEW=ducksdr         name of the DuckSdr container
   REPO=<path>         source checkout (default: current directory)
+  EXTRA_PORTS=8074:8074  extra published ports, space separated
   WAIT=90             seconds to wait for the web UI
   KEEP_ON_FAILURE=1   never roll back, keep the new container
   SKIP_CHECK=1        start the container without waiting for the web UI
@@ -121,6 +122,7 @@ fi
 
 cat > "$TMPD/recreate.py" <<'PY'
 import json
+import os
 import shlex
 import sys
 
@@ -138,10 +140,23 @@ for m in hc.get("Mounts") or []:
             a += ["-v", src + ":" + m["Destination"] + ("" if m.get("RW", True) else ":ro")]
     elif m.get("Type") == "tmpfs":
         a += ["--tmpfs", m["Destination"]]
+def publish_key(spec):
+    parts = spec.split("/")[0].split(":")
+    if len(parts) == 1:
+        return ("", parts[0])
+    return (parts[-2], parts[-1])
+
+published = set()
 for port, binds in (hc.get("PortBindings") or {}).items():
     for b in binds or []:
         host, hp = b.get("HostIp") or "", b.get("HostPort") or ""
         a += ["-p", (host + ":" if host else "") + hp + ":" + port]
+        published.add((hp, port))
+for extra in os.environ.get("EXTRA_PORTS", "").split():
+    if publish_key(extra) in published:
+        continue
+    published.add(publish_key(extra))
+    a += ["-p", extra]
 for d in hc.get("Devices") or []:
     a += ["--device", d["PathOnHost"] + ":" + d["PathInContainer"] + ":" + d.get("CgroupPermissions", "rwm")]
 for e in cc.get("Env") or []:

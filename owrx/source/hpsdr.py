@@ -85,7 +85,7 @@ class HpsdrDeviceDescription(ConnectorDeviceDescription):
         ]
 
     def getDeviceOptionalKeys(self):
-        return list(filter(lambda x : x not in ["rtltcp_compat", "iqswap"], super().getDeviceOptionalKeys())) + ["remote","debug","server_port"]
+        return list(filter(lambda x : x not in ["rtltcp_compat", "rtltcp_relay_bind", "rtltcp_relay_port", "iqswap"], super().getDeviceOptionalKeys())) + ["remote","debug","server_port"]
 
     def getProfileOptionalKeys(self):
         return list(filter(lambda x : x != "iqswap", super().getProfileOptionalKeys()))
